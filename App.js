@@ -1,19 +1,26 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import SearchScreen from './src/screens/SearchScreen';
+/*
+Client ID
+QeSXZe341EQz6UuRIDdndg
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+API Key
+DgJZNagjVLxH2y10NUHTZ623DNfqiQ-2zAekaqV82ZmZO6Je1OHSWeKuSEomABv3YXmX7ZFJ66vY5Wppscc4RKkz3GkSc2wYNPzSknJPrAcvTaeliGVFYuYoMgqxXnYx
+*/
+
+
+const navigator = createStackNavigator({
+  Search : SearchScreen
+}, {
+  initialRouteName: 'Search',
+  defaultNavigationOptions:{
+    title: 'Business Search',
+    
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+);
+
+//creates a default component and displays the content of this component (now has navigator)
+export default createAppContainer(navigator);
