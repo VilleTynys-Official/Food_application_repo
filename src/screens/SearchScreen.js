@@ -7,10 +7,13 @@ import SearchBar from '../components/SeachBar'
 //pass down state and onTermChange to Searchbar.
 //SearchBar uses the onTermChange and changes the term here.
 const SearchScreen = () =>{
-const [term, setTerm] = useState('');
+    const [term, setTerm] = useState('');
     return(
         <View>
-            <SearchBar term={term} OnTermChange={(newTerm)=> setTerm(newTerm)}
+            <SearchBar
+                term={term}
+                onTermChange={(newTerm)=> setTerm(newTerm)}
+                onTermSubmit={()=>console.log('term was submitted')} 
             />
             <Text>{term}</Text>
         </View>
