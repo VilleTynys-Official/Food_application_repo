@@ -1,9 +1,10 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import SearchBar from '../components/SeachBar'
 import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
+import ResultsList from '../components/ResultsList';
 
 /*
 DAY 4
@@ -47,6 +48,9 @@ const SearchScreen = () =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>we have found {results.length} results</Text>
+            <ResultsList></ResultsList>
+            <ResultsList></ResultsList>
+            <ResultsList></ResultsList>
         </View>
     )
 };
