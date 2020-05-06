@@ -5,6 +5,7 @@ import SearchBar from '../components/SeachBar'
 import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 /*
@@ -31,6 +32,11 @@ DAY 4
     RESULTS LIST
         RYHMITTELY
             "filtteröinti hinnan mukaan props.filter...""
+        
+    DETAILS KOMPONENTTI
+        "Täl renderöidään api:sta saadut tiedot haluttuun muotoon"
+                säätele tyylit komponentissa.. älä parentissa..
+
 
 */ 
 
@@ -50,7 +56,8 @@ const SearchScreen = () =>{
 
 
     return(
-        <View>
+    <ScrollView>    
+        <View >
             <SearchBar
                 term={term}
                 onTermChange={(newTerm)=> setTerm(newTerm)}
@@ -59,10 +66,13 @@ const SearchScreen = () =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>we have found {results.length} results</Text>
-            <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
-            <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
-            <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
+
+                <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
+                <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
+                <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
+
         </View>
+    </ScrollView>
     )
 };
 

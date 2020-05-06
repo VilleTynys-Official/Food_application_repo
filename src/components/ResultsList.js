@@ -6,11 +6,12 @@ import ResultsDetail from './ResultsDetail';
 
 const ResultsList = ({title, results}) =>{
     return(
-    <View style={styles.listViewStyle}>
+    <View style={styles.container}>
 
         <Text style={styles.title}>{title}</Text>
         <FlatList
             horizontal
+            showsHorizontalScrollIndicator={false}
             data= {results}
             keyExtractor= {result => result.id}
             renderItem= {({item}) => {
@@ -26,13 +27,15 @@ const ResultsList = ({title, results}) =>{
 
 
 const styles = StyleSheet.create({
-    listViewStyle:{
-        backgroundColor: 'rgb(230,230,240)'
+    container:{
+        marginBottom: 10
+
     },
     title:{
-        backgroundColor: 'gray',
         fontSize: 20,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginLeft: 15,
+        marginBottom: 5
     }
 
 
