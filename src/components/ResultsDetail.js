@@ -1,13 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
 
 
 //FlatList <3 renderItem!!!!!!!
+//image source <3 uri objekti!!!!
 
-const ResultsDetail = ({title, results}) =>{
+const ResultsDetail = ({result}) =>{
     return(
-    <View style={styles.listViewStyle}>
-        <Text>results detail component</Text>
+    <View>
+        <Image style={styles.imageStyle}
+            source={{ uri: result.image_url}}  />
+        <Text style={styles.nameStyle}>
+            {result.name}
+            </Text>
+        <Text style={styles.nameStyle}>
+            Stars: {result.rating}, Reviews: {result.review_count}
+            </Text>
+     
+
+
     </View>
     );
 };
@@ -15,13 +26,14 @@ const ResultsDetail = ({title, results}) =>{
 
 
 const styles = StyleSheet.create({
-    listViewStyle:{
-        backgroundColor: 'rgb(230,230,240)'
+    imageStyle:{
+        width: 250,
+        height: 120,
+        borderRadius: 4
+
     },
-    title:{
-        backgroundColor: 'gray',
-        fontSize: 20,
-        fontWeight: "bold"
+    nameStyle: {
+        fontWeight: 'bold',
     }
 
 
