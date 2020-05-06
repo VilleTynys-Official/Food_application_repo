@@ -25,18 +25,28 @@ DAY 4
             1. move the api related code to hook file
             2. update the connection of the rendered view to the hook.
                 return the objects you need from the hook..
-                connect the hook to the files that consume it   
+                connect the hook to the files that consume it 
+
+    RESULTS LIST
+        RYHMITTELY
+            "filtteröinti hinnan mukaan props.filter...""
 
 */ 
 
-
-
-
-//pass down state and onTermChange to Searchbar.
-//SearchBar uses the onTermChange and changes the term here.
 const SearchScreen = () =>{
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = useResults(); //tuodaan propsit hookista
+
+
+    //funktio joka filtteröi annetun hinta-parametrin mukaan.
+    const filterResultsByPrice = (price) => {
+        ///price === '$' || '$$'|| '$$'
+        return results.filter(result => {
+            return result.price === price;
+        });
+    }
+             
+
 
     return(
         <View>
@@ -48,9 +58,9 @@ const SearchScreen = () =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>we have found {results.length} results</Text>
-            <ResultsList title="Cost Effective"></ResultsList>
-            <ResultsList title="Bit Pricier"></ResultsList>
-            <ResultsList title="Big Spencer"></ResultsList>
+            <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
+            <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
+            <ResultsList results={filterResultsByPrice('$$$')} title="Big Spencer"></ResultsList>
         </View>
     )
 };
