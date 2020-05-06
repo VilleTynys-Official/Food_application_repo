@@ -4,6 +4,9 @@ import {View, Text, StyleSheet} from 'react-native';
 import SearchBar from '../components/SeachBar'
 
 
+
+
+
 //pass down state and onTermChange to Searchbar.
 //SearchBar uses the onTermChange and changes the term here.
 const SearchScreen = () =>{
