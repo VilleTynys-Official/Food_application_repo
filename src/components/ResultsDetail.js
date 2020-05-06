@@ -4,20 +4,10 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 
 //FlatList <3 renderItem!!!!!!!
 
-const ResultsList = ({title, results}) =>{
+const ResultsDetail = ({title, results}) =>{
     return(
     <View style={styles.listViewStyle}>
-
-        <Text style={styles.title}>{title}</Text>
-        <FlatList
-            horizontal
-            data= {results}
-            keyExtractor= {result => result.id}
-            renderItem= {({item}) => {
-               return <Text>{item.name}</Text>
-            }}
-        />
-        <Text>Results: {results.l>ength}</Text>
+        <Text>results detail component</Text>
     </View>
     );
 };
@@ -38,4 +28,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default ResultsList;
+export default ResultsDetail;
