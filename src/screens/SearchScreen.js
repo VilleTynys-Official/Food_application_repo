@@ -6,6 +6,7 @@ import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
+
 /*
 DAY 4
     
@@ -60,7 +61,7 @@ const SearchScreen = () =>{
             <Text>we have found {results.length} results</Text>
             <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
             <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
-            <ResultsList results={filterResultsByPrice('$$$')} title="Big Spencer"></ResultsList>
+            <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
         </View>
     )
 };
