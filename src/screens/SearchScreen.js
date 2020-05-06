@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import SearchBar from '../components/SeachBar'
-
+import yelp from '../api/yelp';
 
 
 
@@ -11,6 +11,8 @@ import SearchBar from '../components/SeachBar'
 //SearchBar uses the onTermChange and changes the term here.
 const SearchScreen = () =>{
     const [term, setTerm] = useState('');
+    const [results, setResults] =useState([]);
+
     return(
         <View>
             <SearchBar
@@ -18,7 +20,7 @@ const SearchScreen = () =>{
                 onTermChange={(newTerm)=> setTerm(newTerm)}
                 onTermSubmit={()=>console.log('term was submitted')} 
             />
-            <Text>{term}</Text>
+            <Text>we have found{results.length} results</Text>
         </View>
     )
 }
