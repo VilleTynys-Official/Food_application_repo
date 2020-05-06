@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const ResultsList = () =>{
-    return <View>
+const ResultsList = ({title}) =>{
+    return <View style={styles.listViewStyle}>
+        <Text style={styles.title} >{title}</Text>
         <Text>ResultsList</Text>
     </View>
 
@@ -11,9 +12,16 @@ const ResultsList = () =>{
 
 
 const styles = StyleSheet.create({
-    // listStyle:{
-    //     backgroundColor = 'blue'
-    // }
+    listViewStyle:{
+        backgroundColor: 'rgb(230,230,240)'
+    },
+    title:{
+        backgroundColor: 'gray',
+        fontSize: 20,
+        fontWeight: "bold"
+        
+        
+    }
 
 
 });
