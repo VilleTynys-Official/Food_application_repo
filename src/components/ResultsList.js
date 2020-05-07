@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 import ResultsDetail from './ResultsDetail';
+import {withNavigation} from 'react-navigation'
+
+
 //komponentti tarjoaa FlatListan, jossa esitetään api haun tulokset (results json.)
 //FlatList <3 data, keyExtractor and renderItem!!!!!!!
 
@@ -44,5 +47,5 @@ const styles = StyleSheet.create({
 
 });
 
-
-export default ResultsList;
+//withNavigation lisää navigoinnin suoraan resultsListiin.
+export default withNavigation(ResultsList);

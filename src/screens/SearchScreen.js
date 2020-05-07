@@ -43,6 +43,15 @@ DAY 4
             "<>" -JSX placeholder, ei tarvitse murehtia <View> komponentin käyttäytymisestä.
     RESULTS SCREEN
         Navigointiin yhdistäminen:
+                HUONOMPI vaihtoehto:
+                    yhdistä parenttiin propsina navigation, josta se välitetään childiin,
+                    jossa sitä käytetään touchableOpacityssä
+                PAREMPI
+                    import withNavigation
+                    export default withNavigation(ResultsList);
+                    >>tää tuo suoraan navigation propsin komponenttiin, jossa sitä voidaan
+                    käyttää.
+                    
 
 */ 
 
@@ -50,7 +59,7 @@ DAY 4
 //hyödyntää ResultsListiä tuloksien esittämisessä.
 
 
-const SearchScreen = ({navigation}) =>{
+const SearchScreen = () =>{
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = useResults(); //tuodaan propsit hookista
 
@@ -75,9 +84,9 @@ const SearchScreen = ({navigation}) =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <ScrollView> 
-                <ResultsList navigation={navigation} results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
-                <ResultsList navigation={navigation} results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
-                <ResultsList navigation={navigation} results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
+                <ResultsList  results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
+                <ResultsList  results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
+                <ResultsList  results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
             </ScrollView>   
         </>
 
