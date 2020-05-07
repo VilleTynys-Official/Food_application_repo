@@ -35,13 +35,13 @@ const ResultsShowScreen = ({navigation}) => {
                 renderItem={( {item} )=>{
                     return (
                         <Image
-                            style= {styles.Image}
-                            source= {{ uri: item}}></Image>
+                            style= {styles.imageStyle}
+                            source= {{ uri: item }}/>
                     )
 
 
                 }}
-            ></FlatList>
+            />
         </View>
             
 
@@ -49,7 +49,7 @@ const ResultsShowScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-    image: {
+    imageStyle: {
         height:200,
         width: 300
         
