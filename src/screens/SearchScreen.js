@@ -41,7 +41,8 @@ DAY 4
         <ScrollView> sopivaan paikkaan..
         pro tip:
             "<>" -JSX placeholder, ei tarvitse murehtia <View> komponentin käyttäytymisestä.
-
+    RESULTS SCREEN
+        Navigointiin yhdistäminen:
 
 */ 
 
@@ -49,7 +50,7 @@ DAY 4
 //hyödyntää ResultsListiä tuloksien esittämisessä.
 
 
-const SearchScreen = () =>{
+const SearchScreen = ({navigation}) =>{
     const [term, setTerm] = useState('');
     const [searchApi, results, errorMessage] = useResults(); //tuodaan propsit hookista
 
@@ -74,9 +75,9 @@ const SearchScreen = () =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <ScrollView> 
-                <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
-                <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
-                <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
+                <ResultsList navigation={navigation} results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
+                <ResultsList navigation={navigation} results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
+                <ResultsList navigation={navigation} results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
             </ScrollView>   
         </>
 

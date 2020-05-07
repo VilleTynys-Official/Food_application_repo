@@ -11,7 +11,7 @@ const ResultsShowScreen = () =>{
     return(
    
         <View>
-            <Text></Text>
+            <Text>results show screen</Text>
         </View>
             
 
