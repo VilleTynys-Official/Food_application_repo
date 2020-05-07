@@ -13,7 +13,7 @@ DgJZNagjVLxH2y10NUHTZ623DNfqiQ-2zAekaqV82ZmZO6Je1OHSWeKuSEomABv3YXmX7ZFJ66vY5Wpp
 
 const navigator = createStackNavigator({
   Search : SearchScreen,
-  Results : ResultsShowScreen
+  ResultsShow : ResultsShowScreen
 }, {
   initialRouteName: 'Search',
   defaultNavigationOptions:{
