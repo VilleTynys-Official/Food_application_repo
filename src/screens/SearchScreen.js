@@ -26,8 +26,8 @@ DAY 4
 
             1. move the api related code to hook file
             2. update the connection of the rendered view to the hook.
-                return the objects you need from the hook..
-                connect the hook to the files that consume it 
+                >>return the objects you need from the hook..
+                >>connect the hook to the files that consume it 
 
     RESULTS LIST
         RYHMITTELY
@@ -39,6 +39,10 @@ DAY 4
 
 
 */ 
+
+//pää screen, jossa on hakutoiminto, joka kutsuu apia ja
+//hyödyntää ResultsListiä tuloksien esittämisessä.
+
 
 const SearchScreen = () =>{
     const [term, setTerm] = useState('');
@@ -56,8 +60,8 @@ const SearchScreen = () =>{
 
 
     return(
-    <ScrollView>    
-        <View >
+   
+        <View style= {{flex: 1}}>
             <SearchBar
                 term={term}
                 onTermChange={(newTerm)=> setTerm(newTerm)}
@@ -66,13 +70,13 @@ const SearchScreen = () =>{
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <Text>we have found {results.length} results</Text>
-
+            <ScrollView> 
                 <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
                 <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
                 <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
-
+            </ScrollView>   
         </View>
-    </ScrollView>
+
     )
 };
 
