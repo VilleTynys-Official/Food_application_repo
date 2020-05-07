@@ -37,6 +37,11 @@ DAY 4
         "Täl renderöidään api:sta saadut tiedot haluttuun muotoon"
                 säätele tyylit komponentissa.. älä parentissa..
 
+    SCROLLAUS
+        <ScrollView> sopivaan paikkaan..
+        pro tip:
+            "<>" -JSX placeholder, ei tarvitse murehtia <View> komponentin käyttäytymisestä.
+
 
 */ 
 
@@ -61,7 +66,7 @@ const SearchScreen = () =>{
 
     return(
    
-        <View style= {{flex: 1}}>
+        <>
             <SearchBar
                 term={term}
                 onTermChange={(newTerm)=> setTerm(newTerm)}
@@ -69,13 +74,12 @@ const SearchScreen = () =>{
 
 
             {errorMessage ? <Text>{errorMessage}</Text> : null}
-            <Text>we have found {results.length} results</Text>
             <ScrollView> 
                 <ResultsList results={filterResultsByPrice('$')} title="Cost Effective"></ResultsList>
                 <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier"></ResultsList>
                 <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender"></ResultsList>
             </ScrollView>   
-        </View>
+        </>
 
     )
 };
