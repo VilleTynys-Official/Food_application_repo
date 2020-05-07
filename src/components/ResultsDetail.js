@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, Image, Text, StyleSheet} from 'react-native';
+//komponentti joka tarjoaa ResultsList:lle kivan visuaalisen ilmeen.
 
-
-//FlatList <3 renderItem!!!!!!!
-//image source <3 uri objekti!!!!
+//image source <3 uri objektia!!!!
 
 const ResultsDetail = ({result}) =>{
     return(

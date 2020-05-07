@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 import ResultsDetail from './ResultsDetail';
-
-//FlatList <3 renderItem!!!!!!!
+//komponentti tarjoaa FlatListan, jossa esitetään api haun tulokset (results json.)
+//FlatList <3 data, keyExtractor and renderItem!!!!!!!
 
 const ResultsList = ({title, results}) =>{
     return(
