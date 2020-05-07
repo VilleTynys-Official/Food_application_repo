@@ -9,13 +9,13 @@ const ResultsShowScreen = ({navigation}) => {
     const [result, setResult] = useState(null); //for objects the default value is 'null'
     const id = navigation.getParam('id');
 
-    console.log(id)
+    //console.log(id)
 
     //hakee datan ja asettaa sen result muuttujaan.
     const getResult = async (id)=>{
         const response = await yelp.get(`/${id}`);
         setResult(response.data);
-        console.log(response.data)
+        //console.log(response.data)
     };
 
     //määrää et getResult suoritetaan vain kerran.
