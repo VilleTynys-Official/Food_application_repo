@@ -8,6 +8,11 @@ import {withNavigation} from 'react-navigation'
 //FlatList <3 data, keyExtractor and renderItem!!!!!!!
 
 const ResultsList = ({title, results, navigation}) =>{
+    
+    if(!results.length){
+        return null;
+    }
+    
     return(
     <View style={styles.container}>
 
