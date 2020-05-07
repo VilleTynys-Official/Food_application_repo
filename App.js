@@ -1,6 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import SearchScreen from './src/screens/SearchScreen';
+import ResultsShowScreen from './src/screens/ResultsShowScreen';
 /*
 Client ID
 QeSXZe341EQz6UuRIDdndg
@@ -11,7 +12,8 @@ DgJZNagjVLxH2y10NUHTZ623DNfqiQ-2zAekaqV82ZmZO6Je1OHSWeKuSEomABv3YXmX7ZFJ66vY5Wpp
 
 
 const navigator = createStackNavigator({
-  Search : SearchScreen
+  Search : SearchScreen,
+  Results : ResultsShowScreen
 }, {
   initialRouteName: 'Search',
   defaultNavigationOptions:{

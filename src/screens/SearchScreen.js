@@ -65,7 +65,6 @@ const SearchScreen = () =>{
 
 
     return(
-   
         <>
             <SearchBar
                 term={term}
