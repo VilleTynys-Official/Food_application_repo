@@ -41,16 +41,23 @@ DAY 4
         <ScrollView> sopivaan paikkaan..
         pro tip:
             "<>" -JSX placeholder, ei tarvitse murehtia <View> komponentin käyttäytymisestä.
-    RESULTS SCREEN
+    RESULTS SHOWSCREEN
         Navigointiin yhdistäminen:
                 HUONOMPI vaihtoehto:
                     yhdistä parenttiin propsina navigation, josta se välitetään childiin,
                     jossa sitä käytetään touchableOpacityssä
                 PAREMPI
-                    import withNavigation
-                    export default withNavigation(ResultsList);
+                    importtaa withNavigation
+                    ja exporttaa default withNavigation(ResultsList);
                     >>tää tuo suoraan navigation propsin komponenttiin, jossa sitä voidaan
                     käyttää.
+
+        Tietojen ja kuvien hakeminen käyttäjän valinnan mukaan:
+
+            Välitetään id propsi navigationin mukana parametrinä ResultsShowScreeniin.
+            Tehdään api haku id:llä.
+            Poimitaan apista saaduista tiedoista uri:t joiden avulla renderöidään FlatList.
+        
                     
 
 */ 
